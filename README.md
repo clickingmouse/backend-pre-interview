@@ -86,10 +86,10 @@ This repo already contains the configuration file for ESLint.
 This repo does not contains any configuration file for Python linting.
 
 #### How to run solution
-Clone the repo
-Make sure python is installed (This solution uses python2)
-In the directory containing the sudoku.txt file
-type python solve.py
+Clone the repo.
+Make sure python is installed (This solution uses python2).
+In the directory containing the sudoku.txt file.
+type python solve.py.
 
 ## Authors
 
