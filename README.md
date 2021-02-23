@@ -87,7 +87,7 @@ This repo does not contains any configuration file for Python linting.
 
 ## Authors
 
-* **Linnovs** - *Initial work* - [linnovs](https://github.com/linnovs)
+* **Kevin Ko** - *Initial work* - [linnovs](https://github.com/clickingmouse/backend-pre-interview.git)
 
 [forkFromGithub]:https://github.com/en-trak/backend-pre-interview/fork
 [createAccount]:https://github.com/join

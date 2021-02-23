@@ -65,12 +65,10 @@ def find_empty(bo):
 
 
 ######################
-print(os.path.join(sys.path[0], 'sudoku1.txt'))
-reader = open(os.path.join(sys.path[0], 'sudoku1.txt'))
+sumArray = []
+print(os.path.join(sys.path[0], 'sudoku.txt'))
+reader = open(os.path.join(sys.path[0], 'sudoku.txt'))
 try:
-    # Further file processing goes here
-    #print(reader.read())
-    #print(reader.readline())
     i = 0
     for line in reader.readlines():
         #print line,
@@ -82,6 +80,14 @@ try:
             row = map(int, row)
             grid.append(row)
             print row
+
+            if len(grid) == 9 :
+                solve(grid)
+                print(np.matrix(grid))
+                sum = grid[0][0]+grid[0][1]+grid[0][2]
+                sumArray.append(sum)
+                print('===>' + str(sum))
+                del grid[:]
     #for i in range(9):
     #    print(i)
 
@@ -89,10 +95,13 @@ finally:
     reader.close()
 
 
+print(sumArray)
 
 
 #print_board(grid)
-print(np.matrix(grid))
-solve(grid)
-print("___________________")
-print(np.matrix(grid))
+# print(np.matrix(grid))
+# solve(grid)
+# print("___________________")
+# print(np.matrix(grid))
+# sum = grid[0][0]+grid[0][1]+grid[0][2]
+# print('===>' + str(sum) )
