@@ -92,7 +92,7 @@ Make sure python is installed (This solution uses python2).
 
 In the directory containing the sudoku.txt file.
 
-Open a command prompt and type >python solve.py.
+Open a command prompt and type `python solve.py`.
 
 ## Authors
 
