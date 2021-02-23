@@ -2,6 +2,9 @@ import os
 import sys
 from array import *
 import numpy as np
+from collections import OrderedDict 
+import pprint
+import json
 sys.setrecursionlimit(5000)
 #global grid
 grid = []
@@ -66,11 +69,15 @@ def find_empty(bo):
 
 ######################
 sumArray = []
+sumDict = OrderedDict() 
 print(os.path.join(sys.path[0], 'sudoku.txt'))
 reader = open(os.path.join(sys.path[0], 'sudoku.txt'))
 try:
     i = 0
     for line in reader.readlines():
+        if line[0] == 'G':
+            print('Puzzle '+ line.strip())
+            puzzleName = line.strip()
         #print line,
         if line[0] != 'G':
             row = line
@@ -83,11 +90,14 @@ try:
 
             if len(grid) == 9 :
                 solve(grid)
+                print("-=Solution=-\n")
                 print(np.matrix(grid))
                 sum = grid[0][0]+grid[0][1]+grid[0][2]
                 sumArray.append(sum)
+                sumDict.update({puzzleName :sum})
                 print('===>' + str(sum))
                 del grid[:]
+                print ('-----------------------------------------')
     #for i in range(9):
     #    print(i)
 
@@ -97,6 +107,9 @@ finally:
 
 print(sumArray)
 
+pp = pprint.PrettyPrinter(indent=4, width=1)
+#pp.pprint(sumDict)
+print(json.dumps(sumDict, indent=4, sort_keys=True))
 
 #print_board(grid)
 # print(np.matrix(grid))
